@@ -4,8 +4,10 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import roboguice.activity.RoboActionBarActivity;
+import roboguice.inject.ContentView;
 import roboguice.inject.InjectView;
 
+@ContentView(R.layout.activity_main)
 public class MainActivity extends RoboActionBarActivity {
 
     @InjectView(R.id.atext_id)
@@ -14,7 +16,6 @@ public class MainActivity extends RoboActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         atextId.setText("Injected with Roboguice");
     }
